@@ -3,9 +3,17 @@ import Vuex from "vuex";
 
 Vue.use(Vuex);
 
-export default new Vuex.Store({
+export default function(){
+
+const Store = new Vuex.Store({
   state: {},
   mutations: {},
   actions: {},
-  modules: {},
-});
+  modules: {
+    account,
+    product
+  },
+  strict: process.env.DEV
+})
+  return Store
+}
